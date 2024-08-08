@@ -1,0 +1,229 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    scroll-behavior: smooth; /* Suaviza o rolar da página */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    z-index: 1; /* Garante que o cabeçalho fique sobre a imagem de fundo */
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.menu-icons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+}
+
+.menu-icons a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.background-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0; /* Garante que a imagem fique atrás do conteúdo principal */
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.greeting-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para a mensagem */
+    border-radius: 8px;
+}
+
+.greeting-message h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.greeting-message p {
+    font-size: 1.2em;
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Adiciona um fundo semi-transparente para melhorar a legibilidade */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo principal fique sobre a imagem */
+    opacity: 0; /* Começa invisível para animação */
+    transition: opacity 1s ease-in-out;
+}
+
+/* Animação de rolagem */
+body.scrolled main {
+    opacity: 1; /* Torna visível quando rolado */
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Estilos do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-left p {
+    margin: 5px 0;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-icon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-icon-container a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon-container span {
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
