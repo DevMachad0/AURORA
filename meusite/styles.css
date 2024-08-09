@@ -1,0 +1,317 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    scroll-behavior: smooth; /* Suaviza o rolar da página */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    z-index: 1; /* Garante que o cabeçalho fique sobre a imagem de fundo */
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.menu-icons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+}
+
+.menu-icons a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.background-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0; /* Garante que a imagem fique atrás do conteúdo principal */
+}
+
+.background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.greeting-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para a mensagem */
+    border-radius: 8px;
+}
+
+.greeting-message h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.greeting-message p {
+    font-size: 1.2em;
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9); /* Adiciona um fundo semi-transparente para melhorar a legibilidade */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo principal fique sobre a imagem */
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Estilos do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+form {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    background-color: #358d89;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #000000;
+}
+
+.success-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+    display: none; /* Inicialmente escondido */
+}
+
+.error-message {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+    display: none; /* Inicialmente escondido */
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-left p {
+    margin: 5px 0;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.footer-icon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.footer-icon-container a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icon-container span {
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Ajuste conforme necessário */
+}
+
+.fundo_menu, .fundo_menu1{
+    position: relative;
+    background: rgba(66, 66, 66, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.fundo_menu2 {
+    position: relative;
+    margin-top: 80px; /* Ajuste o valor conforme necessário */
+    background: rgba(66, 66, 66, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    
+}
+
+.fundo_menu {
+    top: 30%; /* Ajuste a posição vertical conforme necessário */
+}
+
+.fundo_menu1 {
+    top: 60%; /* Ajuste a posição vertical conforme necessário */
+}
+.fundo_menu2 {
+    top: 90%; /* Ajuste a posição vertical conforme necessário */
+}
+.success-message {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #4CAF50; /* Borda verde */
+    background-color: #DFF2BF; /* Fundo verde claro */
+    color: #4F8A10; /* Texto verde escuro */
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out; /* Transição suave para a exibição */
+}
+
+.success-message.show {
+    display: block;
+    opacity: 1;
+}
+
